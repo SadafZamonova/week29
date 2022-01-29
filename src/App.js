@@ -18,14 +18,15 @@ function App() {
   return (  
 
 <div >
- <div >
- { addprint.map((print,index) => (<p  key={`${index}`}> {print} </p>))  }
+ <div > 
+   {/* отображаем массив и записываем ключ index рядом с элементом, так как map кроме элемента массива может возвращать его индекс в массиве., так же условие выведения комента другим цветом */}
+ { addprint.map((print,index) => (<p style={{backgroundColor: index ===0 ? 'red' : 'grey' }} key={index}> {print} </p>))  } 
  
    </div>
   
   <input 
       value={input} 
-      onChange={e => setInput(e.target.value) }/>
+      onChange={e => setInput(e.target.value) }/>  {/* храним значение инпута в с стейте */}
   <button onClick={addTop}> кнопка </button>
 
 
